@@ -62,12 +62,11 @@ function App() {
   // }
   var add_checkbox = () => {
     console.log("add_checkbox called");
-    debugger;
     htmldata = `<div class="checkbox">
       <label>`;
     if ($("#checkboxdefault").val() == "true") {
       htmldata +=
-        `<input type="checkbox"checked name="` +
+        `<input type="checkbox" checked name="` +
         $("#checkboxname").val() +
         `"> ${$("#checkboxlabel").val()} `;
     } else {
@@ -77,6 +76,7 @@ function App() {
         `">  ${$("#checkboxlabel").val()}`;
     }
     htmldata += "</label></div>";
+    robotdata += `Add Checkbox${$("#checkboxname").val() ? '  name=' + $("#checkboxname").val() : ""}${$("#checkboxlabel").val() ? '  label=' + $("#checkboxlabel").val() : ""}\n`
     handleClose();
     // $("#myModal").modal("toggle");
     $("#" + funcParam).append(htmldata);
@@ -103,13 +103,14 @@ function App() {
       `<div class="form-group">
             <label>${$("#dateinputlabel").val()}</label>
             <input type="date" class="form-control" value="${$(
-              "#dateinputdefault"
-            ).val()}" name="` +
+        "#dateinputdefault"
+      ).val()}" name="` +
       $("#dateinputname").val() +
       `">
           </div>`;
     $("#myModal").modal("toggle");
     $("#" + funcParam).append(htmldata);
+    robotdata += `Add Date Input${$("#dateinputname").val() ? '  name=' + $("#dateinputname").val() : ""}${$("#dateinputlabel").val() ? '  label=' + $("#dateinputlabel").val() : ""}\n`
   };
   const link_add_dialog_next_page_button = (target) => {
     $("#modal_title").html("dialog next page button Property");
@@ -160,6 +161,7 @@ function App() {
           </div>`;
     $("#myModal").modal("toggle");
     $("#" + target).append(htmldata);
+    robotdata += `Add drop-down${$("#deopdouwnname").val() ? '  name=' + $("#deopdouwnname").val() : ""}${$("#deopdouwndeoptions").val() ? '  options=' + $("#deopdouwndeoptions").val() : ""}${$("#deopdouwndefault").val() ? '  default=' + $("#deopdouwndefault").val() : ""}${$("#deopdouwnlabel").val() ? '  label=' + $("#deopdouwnlabel").val() : ""}\n`
   };
   const link_add_file = (target) => {
     $("#modal_title").html("Checkbox Property");
@@ -211,6 +213,7 @@ function App() {
     }
     $("#myModal").modal("toggle");
     $("#" + target).append(htmldata);
+    robotdata += `Add heading${$("#headingname").val() ? '  heading=' + $("#headingname").val() : ""}${$("#headingsize").val() ? '  size=' + $("#headingsize").val() : ""}\n`
   };
   const link_add_hidden_input = (target) => {
     $("#modal_title").html("hidden input Property");
@@ -238,6 +241,7 @@ function App() {
     ).val()}">`;
     $("#myModal").modal("toggle");
     $("#" + target).append(htmldata);
+    robotdata += `Add hidden input${$("#hiddeninputname").val() ? '  name=' + $("#hiddeninputname").val() : ""}${$("#hiddeninputvalue").val() ? '  value=' + $("#hiddeninputvalue").val() : ""}\n`
   };
   const link_add_icon = (target) => {
     $("#modal_title").html("Add icon Property");
@@ -297,6 +301,7 @@ function App() {
     htmldata = `<center>${htmldata}</center>`;
     $("#myModal").modal("toggle");
     $("#" + target).append(htmldata);
+    robotdata += `Add icon${$("#iconvariant").val() ? '  variant=' + $("#iconvariant").val() : ""}${$("#iconsize").val() ? '  size=' + $("#iconsize").val() : ""}\n`
   };
   const link_add_image = (target) => {
     $("#modal_title").html("Add Image Property");
@@ -329,6 +334,7 @@ function App() {
     htmldata = `<center>${htmldata}</center>`;
     $("#myModal").modal("toggle");
     $("#" + target).append(htmldata);
+    robotdata += `Add image${$("#image_url_or_path").val() ? '  url_or_path=' + $("#image_url_or_path").val() : ""}${$("#image_width").val() ? '  width=' + $("#image_width").val() : ""}${$("#image_height").val() ? '  height=' + $("#image_height").val() : ""}\n`
   };
   const link_add_link = (target) => {
     $("#modal_title").html("Add Link Property");
@@ -361,6 +367,7 @@ align-items: center;
       ${$("#link_label").val()}</a>`;
     $("#myModal").modal("toggle");
     $("#" + target).append(htmldata);
+    robotdata += `Add link${$("#link_url").val() ? '  url=' + $("#link_url").val() : ""}${$("#link_label").val() ? '  label=' + $("#link_label").val() : ""}\n`
   };
   const link_add_password_input = (target) => {
     $("#modal_title").html("Add Password Property");
@@ -391,13 +398,14 @@ align-items: center;
       `<div class="form-group">
             <label>${$("#password_label").val()}</label>
             <input type="password" class="form-control" placeholder='${$(
-              "#password_placeholder"
-            ).val()}' name="` +
+        "#password_placeholder"
+      ).val()}' name="` +
       $("#password_name").val() +
       `">
           </div>`;
     $("#myModal").modal("toggle");
     $("#" + target).append(htmldata);
+    robotdata += `Add password input${$("#password_name").val() ? '  name=' + $("#password_name").val() : ""}${$("#link_label").val() ? '  label=' + $("#link_label").val() : ""}${$("#password_placeholder").val() ? '  placeholder=' + $("#password_placeholder").val() : ""}\n`
   };
   const link_add_radio_buttons = (target) => {
     $("#modal_title").html("Add Radio Button Property");
@@ -446,6 +454,7 @@ align-items: center;
     htmldata += `</div>`;
     $("#myModal").modal("toggle");
     $("#" + target).append(htmldata);
+    robotdata += `Add radio buttons${$("#radio_buttons_name").val() ? '  name=' + $("#radio_buttons_name").val() : ""}${$("#radio_buttons_deoptions").val() ? '  options=' + $("#radio_buttons_deoptions").val() : ""}${$("#radio_buttons_default").val() ? '  default=' + $("#radio_buttons_default").val() : ""}${$("#link_label").val() ? '  label=' + $("#link_label").val() : ""}\n`
   };
   const link_add_submit_buttons = (target) => {
     $("#modal_title").html("Add Submit button Property");
@@ -483,6 +492,7 @@ justify-content: space-evenly;
     htmldata += `</div>`;
     $("#myModal").modal("toggle");
     $("#" + target).append(htmldata);
+    robotdata += `Add submit buttons${$("#submit_buttons").val() ? '  buttons=' + $("#submit_buttons").val() : ""}${$("#submit_buttons_default").val() ? '  default=' + $("#submit_buttons_default").val() : ""}\n`
   };
   const link_add_text = (target) => {
     $("#modal_title").html("Add Text Property");
@@ -511,6 +521,7 @@ justify-content: space-evenly;
     htmldata = `<p style='font-size:${$("#textsize").val()}'>${$("#textvalue").val()}</p>`;
     $("#myModal").modal("toggle");
     $("#" + target).append(htmldata);
+    robotdata += `Add text${$("#textvalue").val() ? '  text=' + $("#textvalue").val() : ""}${$("#textsize").val() ? '  size=' + $("#textsize").val() : ""}\n`
   };
   const link_add_text_input = (target) => {
     $("#modal_title").html("Add Text Input Property");
@@ -549,6 +560,8 @@ justify-content: space-evenly;
     </div>`;
     $("#myModal").modal("toggle");
     $("#" + target).append(htmldata);
+    robotdata += `Add text input${$("#textinputname").val() ? '  name=' + $("#textinputname").val() : ""}${$("#textinputlabel").val() ? '  label=' + $("#textinputlabel").val() : ""}${$("#textinputplaceholder").val() ? '  placeholder=' + $("#textinputplaceholder").val() : ""}${$("#textinputrowe").val() ? '  rows=' + $("#textinputrowe").val() : ""}\n`
+
   };
   const link_clear_elements = (target) => {
     $("#modal_title").html("Checkbox Property");
