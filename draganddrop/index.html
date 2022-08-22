@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example formBuilder</title>
+  <script src="jquery.min.js"></script>
+  <script src="form-builder.min.js"></script>
+  <script src="jquery-ui.min.js"></script>
+ 
+ <style type="text/css">
+  body {
+  padding: 0;
+  margin: 10px 0;
+ }
+</style>
+<script>
+ jQuery($ => {
+  const fbTemplate = document.getElementById('build-wrap');
+  $(fbTemplate).formBuilder();
+});
+  </script>
+</head>
+
+<body>
+<div id="build-wrap"></div>
+  
+</body>
+</html>
